@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: hsla(0, 0%, 15%, 1);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+li:hover {
+  background-color: hsla(0, 0%, 15%, 1);
+}
+
+.emojiContainer {
+  background: hsla(0, 0%, 14%, 1);
+  border: 1px solid hsla(0, 0%, 24%, 1);
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 5px;
+  padding: 3px 7px;
+}
+
+.emojiContainer:hover {
+  background: hsla(0, 0%, 22%, 1);
+  border: 1px solid hsla(0, 0%, 14%, 1);
+}
+
+.emojiHover:hover {
+  background: hsla(0, 0%, 22%, 1);
+}
+
+::-webkit-scrollbar {
+  width: 7px; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsla(0, 0%, 18%, 1); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+}

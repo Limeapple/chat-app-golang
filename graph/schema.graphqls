@@ -1,0 +1,64 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+#go run github.com/99designs/gqlgen generate
+
+type Member {
+  _id: ID!
+  nickname: String!
+  color: String!
+  image: String!
+  createdAt: String!
+}
+
+type MessageReactionEmoji {
+  memberID: [String]!
+  emojiCode: String!
+}
+
+type Message {
+  _id: ID!
+  member: Member!
+  content: String!
+  createdAt: String!
+  emoji: [MessageReactionEmoji!]
+  channelName: String!
+}
+
+input GetMember {
+  _id: ID!
+  nickname: String!
+  color: String!
+  image: String!
+  createdAt: String!
+}
+
+input GetMessageReactionEmoji {
+  memberID: [String]!
+  emojiCode: String!
+}
+
+input GetMessage {
+  _id: ID!
+  member: GetMember!
+  content: String!
+  createdAt: String!
+  emoji: [GetMessageReactionEmoji!]!
+  channelName: String!
+}
+
+type Query {
+  getMessage(selectRoom: String!): [Message]!
+  createMember: Member!
+}
+
+type Mutation {
+  sendMessage(input: GetMessage!): Message!
+  updateMessage(input: GetMessage!): Message!
+}
+
+type Subscription {
+  Messages: [Message]!
+  updateMessage: [Message]!
+}
